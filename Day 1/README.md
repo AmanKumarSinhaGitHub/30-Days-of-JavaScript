@@ -18,9 +18,9 @@ Task 5: Declare a variable using let, assign it an initial value, reassign a new
 
 ### Activity 5: Understanding const
 
-### Task 6: Try reassigning a variable declared with const and observe the error.
+Task 6: Try reassigning a variable declared with const and observe the error.
 
-Feature Request:
+### Feature Request:
 1. Variable Types Console Log: Write a script that declares variables of different data types and logs both the value and type of each variable to the console. 
 
 2. Reassignment Demo: Create a script that demonstrates the difference in behavior between let and const when it comes to reassignment.
