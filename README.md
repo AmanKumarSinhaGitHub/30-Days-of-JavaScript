@@ -1,6 +1,7 @@
 # 30 Days of JavaScript Challenge
  
 ### Day 1: Variables and Data Types
+
 - Know how to declare variables using var, let, and const. 
 
 - Understand the different data types in JavaScript.
@@ -10,6 +11,7 @@
 - Understand the concept of variable reassignment and the immutability of const variables.
 
 ### Day 2: Operators
+
 - Understand and use arithmetic operators to perform basic calculations.
 
 -  Use assignment operators to modify variable values.
@@ -89,3 +91,15 @@ Use the ternary operator for concise conditional expressions.
 - Define functions with default parameters.
 
 - Create objects using enhanced object literals, including methods and computed property names.
+
+
+### Day 9 : DOM Manipulation
+
+- Select and manipulate DOM elements using JavaScript.
+
+- Create and append new elements to the DOM.
+- Remove elements from the DOM.
+
+- Modify attributes and classes of HTML elements.
+
+- Add and handle events to make web pages interactive.

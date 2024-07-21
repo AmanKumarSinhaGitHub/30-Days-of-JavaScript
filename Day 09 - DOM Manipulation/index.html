@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    "
+  >
+    <h1>DOM Manipulation</h1>
+
+    <div class="container">
+      <h2 id="heading" class="text">Hello World</h2>
+      <p id="paragraph" class="text">This is a paragraph</p>
+    </div>
+
+    <div>
+      <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </div>
+
+    <button id="btn">Click Me</button>
+
+    <div class="div">
+      <div>
+        <h2>Hello World</h2>
+      </div>
+
+      <div>
+        <p>This is a paragraph</p>
+      </div>
+    </div>
+
+    <style>
+      .object-contain {
+        object-fit: contain;
+      }
+
+      .object-cover {
+        object-fit: cover;
+      }
+
+      .border {
+        border: 2px solid black;
+      }
+    </style>
+
+    <div class="img-container">
+      <img
+        class="object-contain"
+        src="https://images.unsplash.com/photo-1479779978657-f97923f70d04?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D"
+        alt="img"
+        height="300"
+        width="300"
+      />
+    </div>
+
+    <p id="changeText">Text will chang when click on button</p>
+    <button id="changeTextBtn">Change Text</button>
+
+    <script>
+      // Task 1
+      let heading = document.getElementById("heading");
+      heading.innerText = "Hello JavaScript";
+
+      // Task 2
+      let container = document.getElementsByClassName("container");
+      container[0].style.backgroundColor = "lightblue";
+
+      // Task 3
+      let div = document.createElement("div");
+      div.innerHTML = "<b>This is a new div using appendChild();</b>";
+      document.body.appendChild(div);
+
+      // Task 4
+      let item = document.createElement("li");
+      item.innerText = "Item 6 using JS";
+      let list = document.getElementById("list");
+      list.appendChild(item);
+
+      // Task 5
+      let btn = document.getElementById("btn");
+      btn.remove();
+
+      // Task 6
+      let parentDiv = document.getElementsByClassName("div")[0];
+      let lastChild = parentDiv.lastElementChild;
+      if (lastChild) {
+        parentDiv.removeChild(lastChild);
+      }
+
+      // Task 7
+      let img = document.querySelector(".img-container img");
+      img.src =
+        "https://images.unsplash.com/photo-1514911278673-b33f6439fad3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D";
+
+      // Task 8
+      img.classList.remove("object-contain");
+      img.classList.add("object-cover");
+      img.classList.add("border");
+
+      // Task 9
+      let changeTextBtn = document.getElementById("changeTextBtn");
+      let changeText = document.getElementById("changeText");
+
+      changeTextBtn.addEventListener("click", () => {
+        changeText.innerText = "Text has been changed";
+      });
+
+      // Task 10
+      img.addEventListener("mouseover", () => {
+        img.style.border = "2px solid red";
+      });
+
+      img.addEventListener("mouseout", () => {
+        img.style.border = "2px solid black";
+      });
+    </script>
+  </body>
+</html>
