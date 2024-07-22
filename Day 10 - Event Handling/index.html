@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p id="paragraph">This paragraph will change on button click</p>
+        <button id="btn">Click Me</button>
+    </div>
+
+
+    <p>Double Click to Remove the Pic</p>
+
+    <img src="https://images.unsplash.com/photo-1721355623754-58380b4ab4d6?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="img" height="200px" width="auto">
+
+
+    <div class="box" style="background-color: cadetblue; width: 100%; height: 50px;">
+        <p>Hover to change background color</p>
+    </div>
+
+    <input type="text" style="margin-top : 20px;" placeholder="Input Text Here">
+    <p class="paragraph"></p>
+
+
+    <p class="form-data"></p>
+    <form action="#">
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <input type="email" id="email" placeholder="Enter Your Email">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <p class="selected"> Selected Value</p>
+
+
+    <select id="select">
+        <option value="">Select an Option</option>
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+    </select>
+
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+
+    <button id="addItemButton">Add Item</button>
+    <ul id="ul">
+        <li>Initial Item 1</li>
+        <li>Initial Item 2</li>
+    </ul>
+
+
+
+    <script>
+
+        // Task 1
+        const btn = document.querySelector('#btn');
+        const paragraph = document.querySelector('#paragraph');
+
+        btn.addEventListener('click', () => {
+            paragraph.textContent = 'Button Clicked';
+        })
+
+
+        // Task 2
+        const img = document.querySelector('img');
+        img.addEventListener('click', () => {
+            img.style.visibility = 'hidden';
+        })
+
+
+        // Task 3
+        const box = document.querySelector('.box');
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = "grey"
+        })
+
+
+        // Task 4
+        box.addEventListener('mouseout', () => {
+            box.style.backgroundColor = "cadetblue"
+        })
+
+
+        // Task 5
+        const input = document.querySelector('input');
+        input.addEventListener('keydown', (e) => {
+            console.log(e.key);
+
+
+        })
+
+
+        // Task 6
+        input.addEventListener('keyup', () => {
+            document.querySelector('.paragraph').textContent = input.value;
+        })
+
+
+        // Task 7
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let name = document.querySelector('#name').value;
+            let email = document.querySelector('#email').value;
+            document.querySelector('.form-data').textContent = `Name: ${name}, Email: ${email}`;
+            document.querySelector('#email').value = "";
+            document.querySelector('#name').value = "";
+        })
+
+
+
+        // Task 8
+        const select = document.querySelector('#select');
+        select.addEventListener('change', () => {
+            document.querySelector('.selected').textContent = `Selected Value: ${select.value}`;
+        })
+
+
+        // Task 9
+        document.querySelector('#list').addEventListener('click', (e) => {
+            if (e.target && e.target.nodeName === 'LI') {
+                console.log('Clicked item text:', e.target.textContent);
+            }
+        });
+
+
+
+        // Task 10
+
+        // Event listener for dynamically added items
+        document.getElementById('ul').addEventListener('click', (event) => {
+            if (event.target && event.target.nodeName === 'LI') {
+                console.log('Clicked dynamic item text:', event.target.textContent);
+            }
+        });
+
+        // Adding new items dynamically
+        document.getElementById('addItemButton').addEventListener('click', function () {
+            let newItem = document.createElement('li');
+            newItem.textContent = 'New Item ' + (document.getElementById('ul').children.length + 1);
+            document.getElementById('ul').appendChild(newItem);
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

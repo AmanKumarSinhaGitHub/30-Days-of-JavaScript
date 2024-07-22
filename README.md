@@ -103,3 +103,14 @@ Use the ternary operator for concise conditional expressions.
 - Modify attributes and classes of HTML elements.
 
 - Add and handle events to make web pages interactive.
+
+
+### Day 10: Event Handling
+
+- Add and handle basic events like click, double-click, mouseover, mouseout, keydown, and keyup.
+
+- Understand and handle form events.
+
+- Implement event delegation to manage events on dynamically added elements.
+
+- Make web pages interactive by responding to various user actions.
