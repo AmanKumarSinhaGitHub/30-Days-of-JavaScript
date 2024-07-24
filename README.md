@@ -127,3 +127,15 @@ Use the ternary operator for concise conditional expressions.
 - Fetch data from public APIs using both promises and async/await.
 
 - Manage multiple concurrent promises using `Promise.all` and `Promise.race`.
+
+### Day 12: Error Handling
+
+- Understand and implement basic error handling using try-catch blocks.
+
+- Use finally blocks to execute code regardless of the try-catch outcome.
+
+- Create and use custom error classes.
+
+- Handle errors in promises using .catch() and within async functions using try-catch.
+
+- Implement graceful error handling when making network requests with the fetch API.
