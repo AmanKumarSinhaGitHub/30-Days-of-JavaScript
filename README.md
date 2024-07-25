@@ -139,3 +139,13 @@ Use the ternary operator for concise conditional expressions.
 - Handle errors in promises using .catch() and within async functions using try-catch.
 
 - Implement graceful error handling when making network requests with the fetch API.
+
+### Day 13: Modules
+
+- Create and export functions, objects, and constants using modules.
+
+- Import modules using named and default imports.
+
+- Use third-party modules installed via npm.
+
+- Understand the basics of module bundling 
