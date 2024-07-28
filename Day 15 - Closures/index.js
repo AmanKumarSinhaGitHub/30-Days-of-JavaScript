@@ -108,25 +108,35 @@ console.log(items); // ["item1"]
 
 
 // Task 7
-function memoize(fn) {
-    let cache = {};
+function memoizeAddition(add) {
+    const cache = {};
 
-    return function (...args) {
-        let key = JSON.stringify(args);
-        if (!cache[key]) {
-            cache[key] = fn(...args);
+    return function (a, b) {
+        const key = `${a},${b}`;
+
+        if (cache[key]) {
+            return cache[key];
         }
-        return cache[key];
+
+        const result = add(a, b);
+        cache[key] = result;
+
+        return result;
     };
 }
 
+// Example usage
 function add(a, b) {
     return a + b;
 }
 
-const memoizedAdd = memoize(add);
-console.log(memoizedAdd(1, 2)); // Logs: 3
-console.log(memoizedAdd(1, 2)); // Logs: 3 (retrieved from cache)
+const memoizedAdd = memoizeAddition(add);
+
+console.log(memoizedAdd(3, 4)); // Computes and returns 7
+console.log(memoizedAdd(3, 4)); // Returns cached result 7
+console.log(memoizedAdd(4, 5)); // Computes and returns 9
+
+
 
 
 // Task 8
