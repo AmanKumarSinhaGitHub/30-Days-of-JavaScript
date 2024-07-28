@@ -162,3 +162,14 @@ Use the ternary operator for concise conditional expressions.
 - Apply getters and setters for encapsulation.
 
 - Understand and use private fields in classes (optional).
+
+
+### Day 15: Closures
+
+- Understand and create closures in JavaScript.
+
+- Use closures to maintain private state and create encapsulated modules.
+
+- Apply closures in practical scenarios like generating unique IDs and memoization.
+
+- Use closures in loops to capture and use variables correctly.
