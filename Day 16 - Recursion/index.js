@@ -108,3 +108,46 @@ console.log(fib(6)); // 8
 */
 
 
+// Task 3
+
+function sumArray(arr) {
+    // Base case: If the array is empty, return 0
+    if (arr.length === 0) {
+        return 0;
+    }
+    return arr[0] + sumArray(arr.slice(1));
+}
+
+const arr = [10, 20, 30, 40, 50];
+console.log(sumArray(arr));
+
+
+/*
+
+                                DRY RUN
+
+                        sumArr([10,20,30,40,50]) (answer = 150)
+                                 |
+                                 |
+                        10 + sumArr([20,30,40,50]) (return 10 + 140)
+                                 |
+                                 |
+                        20 + sumArr([30,40,50]) (return 20 + 120 = 140)
+                                 |
+                                 |
+                        30 + sumArr([40,50]) (return 30 + 50 = 80)
+                                 |
+                                 |
+                        40 + sumArr([50]) (return 40 + 10 = 50)
+                                 |
+                                 |
+                        10 + sumArr([])  (return 10 + 0 = 10)
+                                 |
+                                 |
+                            (return 0)
+                            
+*/
+
+
+
+
